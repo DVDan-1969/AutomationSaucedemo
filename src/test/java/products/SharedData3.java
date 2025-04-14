@@ -1,4 +1,4 @@
-package shoppingCart;
+package products;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.time.Duration;
 
-public class SharedData1 {
+public class SharedData3 {
     WebDriver driver;
 
     @BeforeMethod
@@ -17,7 +17,6 @@ public class SharedData1 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://saucedemo.com");
-
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
@@ -28,4 +27,6 @@ public class SharedData1 {
             driver.quit();
         }
     }
+
+
 }

@@ -2,9 +2,9 @@ package shoppingCart;
 
 
 import org.openqa.selenium.By;
-import org.testng.annotations.Test;
+import org.testng.annotations.Test;;
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+
 
 public class ShoppingCart extends SharedData1 {
 
@@ -17,10 +17,11 @@ public class ShoppingCart extends SharedData1 {
         driver.findElement(By.id("shopping_cart_container")).click();
 
         String price = driver.findElement(By.className("inventory_item_price")).getText();
-        assertEquals(price,"$29.99");
+        assertEquals(price, "$29.99");
         driver.findElement(By.id("continue-shopping")).click();
 
-       driver.findElement(By.id("add-to-cart-sauce-labs-bolt-t-shirt")).click();
+
+        driver.findElement(By.id("add-to-cart-sauce-labs-bolt-t-shirt")).click();
 
         driver.findElement(By.id("add-to-cart-sauce-labs-onesie")).click();
 
@@ -60,7 +61,7 @@ public class ShoppingCart extends SharedData1 {
 
         String qty1 = driver.findElement(By.id("shopping_cart_container")).getText();
 
-        System.out.println("cosul de cumparaturi contine 0 produse"+qty1);
+        System.out.println("cosul de cumparaturi contine 0 produse" + qty1);
 
     }
 }
