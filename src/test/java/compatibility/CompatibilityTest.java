@@ -8,24 +8,22 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
 public class CompatibilityTest {
     WebDriver driver;
-    String browser = "chrome";
+    String browser = "edge";
 
-
+    @Parameters("browser")
     @BeforeMethod
     public void setUp() {
         if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "C://chromedriver.exe");
             driver=new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "C://geckodriver.exe");
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("edge")) {
-            System.setProperty("webdriver.edge.driver", "C://edgedriver.exe");
             driver = new EdgeDriver();
         } else {
             throw new IllegalArgumentException("Browser necunoscut: " + browser);
